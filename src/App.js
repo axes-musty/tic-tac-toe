@@ -1,10 +1,10 @@
-import React from 'react';
-import {AppProvider} from './context/AppContext';
-import Tile from './components/Tile';
-import TextBox from './components/Textbox';
-import ResetButton from './components/ResetButton';
+import React from 'react'
+import { AppProvider } from './context/AppContext'
+import Tile from './components/Tile'
+import TextBox from './components/Textbox'
+import ResetButton from './components/ResetButton'
 
-import './App.css';
+import './App.css'
 
 const App = () => {
   return (
@@ -53,7 +53,7 @@ const App = () => {
       </div>
 
     </AppProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

@@ -1,60 +1,67 @@
 /* eslint-disable react/prop-types */
-import React, {createContext, useReducer} from 'react';
+import React, { createContext, useReducer } from 'react'
 
 export const AppReducer = (state, action) => {
   switch (action.type) {
     case 'CHANGE_PLAYER':
-      state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X';
+      state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X'
       return {
-        ...state,
-      };
+        ...state
+      }
     case 'SET_GAMESTATE':
-      state.gameState = action.payload;
+      state.gameState = action.payload
       switch (state.gameState) {
         case 0:
           state.TextBoxContent =
-          'Place ' + state.currentPlayer + ' to start the game!';
-          break;
+          'Place ' + state.currentPlayer + ' to start the game!'
+          break
         case 1:
-          state.TextBoxContent = 'Place ' + state.currentPlayer;
-          break;
+          state.TextBoxContent = 'Place ' + state.currentPlayer
+          break
         case 2:
           if (state.currentPlayer === 'X') {
-            state.TextBoxContent = 'O won!';
+            state.TextBoxContent = 'O won!'
           } else {
-            state.TextBoxContent = 'X won!';
+            state.TextBoxContent = 'X won!'
           }
-          break;
+          break
         case 3:
-          state.TextBoxContent = 'Tie!';
-          break;
+          state.TextBoxContent = 'Tie!'
+          break
         default:
-          console.log('Unhandled gameState: ' + state.gameState);
+          console.log('Unhandled gameState: ' + state.gameState)
       }
       return {
-        ...state,
-      };
+        ...state
+      }
     case 'SET_TILEVALUE':
-      state.board[action.id] = action.value;
+      state.board[action.id] = action.value
       return {
-        ...state,
-      };
+        ...state
+      }
     case 'RESET_BOARD':
-      state.board ={
-        Tile11: 'Z', Tile12: 'Z', Tile13: 'Z',
-        Tile21: 'Z', Tile22: 'Z', Tile23: 'Z',
-        Tile31: 'Z', Tile32: 'Z', Tile33: 'Z'};
+      state.board = {
+        Tile11: 'Z',
+        Tile12: 'Z',
+        Tile13: 'Z',
+        Tile21: 'Z',
+        Tile22: 'Z',
+        Tile23: 'Z',
+        Tile31: 'Z',
+        Tile32: 'Z',
+        Tile33: 'Z'
+      }
       return {
-        ...state,
-      };
+        ...state
+      }
     default:
       return {
-        ...state,
-      };
+        ...state
+      }
   }
-};
+}
 
-export const AppContext = createContext();
+export const AppContext = createContext()
 const initialState = {
   currentPlayer: 'X',
   TextBoxContent: 'Place X to start the game!',
@@ -66,12 +73,20 @@ const initialState = {
     3 - game finished with a tie
   */
   board:
-    {Tile11: 'Z', Tile12: 'Z', Tile13: 'Z',
-      Tile21: 'Z', Tile22: 'Z', Tile23: 'Z',
-      Tile31: 'Z', Tile32: 'Z', Tile33: 'Z'}, /* Z = empty */
-};
+    {
+      Tile11: 'Z',
+      Tile12: 'Z',
+      Tile13: 'Z',
+      Tile21: 'Z',
+      Tile22: 'Z',
+      Tile23: 'Z',
+      Tile31: 'Z',
+      Tile32: 'Z',
+      Tile33: 'Z'
+    } /* Z = empty */
+}
 export const AppProvider = (props) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [state, dispatch] = useReducer(AppReducer, initialState)
   return (
     <AppContext.Provider
       value={{
@@ -80,10 +95,10 @@ export const AppProvider = (props) => {
         gameState: state.gameState,
         winner: state.winner,
         board: state.board,
-        dispatch,
+        dispatch
       }}
     >
       {props.children}
     </AppContext.Provider>
-  );
-};
+  )
+}
