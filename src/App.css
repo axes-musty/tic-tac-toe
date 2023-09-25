@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 10%;
+    height: 50vh;
 }
 
 .row {
@@ -30,7 +31,8 @@
 .tile {
     display: flex;
     min-height: 100px;
-    min-width: 100px;
+    height: 100px;
+    width: 100px;
     justify-content: center;
     align-items: center;
     color: black;
@@ -45,6 +47,7 @@
     border: solid 1px;
     color: black;
     border-color: black;
+    padding: 0%;
 }
 
 .btn-reset{
