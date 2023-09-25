@@ -7,15 +7,14 @@ import '../App.css';
 const TextBox = () => {
   const {TextBoxContent, board, gameState, dispatch} = useContext(AppContext);
 
-  /* useEffect(() => {
-    evalGame(board, gameState);
-  }, board); */
   if (gameState === 1) {
     const result = evalGame(board, gameState);
-    dispatch({
-      type: 'SET_GAMESTATE',
-      payload: result,
-    });
+    if (!(result === 0)) {
+      dispatch({
+        type: 'SET_GAMESTATE',
+        payload: result,
+      });
+    }
   }
   return (
     <AppProvider>

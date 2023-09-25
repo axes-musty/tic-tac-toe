@@ -10,8 +10,10 @@ export const AppReducer = (state, action) => {
       };
     case 'SET_GAMESTATE':
       state.gameState = action.payload;
-      switch (parseInt(state.gameState)) {
+      switch (state.gameState) {
         case 0:
+          state.TextBoxContent =
+          'Place ' + state.currentPlayer + ' to start the game!';
           break;
         case 1:
           state.TextBoxContent = 'Place ' + state.currentPlayer;
@@ -34,6 +36,14 @@ export const AppReducer = (state, action) => {
       };
     case 'SET_TILEVALUE':
       state.board[action.id] = action.value;
+      return {
+        ...state,
+      };
+    case 'RESET_BOARD':
+      state.board ={
+        Tile11: 'Z', Tile12: 'Z', Tile13: 'Z',
+        Tile21: 'Z', Tile22: 'Z', Tile23: 'Z',
+        Tile31: 'Z', Tile32: 'Z', Tile33: 'Z'};
       return {
         ...state,
       };

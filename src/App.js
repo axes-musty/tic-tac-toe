@@ -2,6 +2,8 @@ import React from 'react';
 import {AppProvider} from './context/AppContext';
 import Tile from './components/Tile';
 import TextBox from './components/Textbox';
+import ResetButton from './components/ResetButton';
+
 import './App.css';
 
 const App = () => {
@@ -43,6 +45,9 @@ const App = () => {
           <div className='tile'>
             <Tile id="Tile33"/>
           </div>
+        </div>
+        <div className='row-reset-button'>
+          <ResetButton />
         </div>
 
       </div>
