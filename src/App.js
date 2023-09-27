@@ -1,10 +1,10 @@
-import React from 'react'
-import { AppProvider } from './context/AppContext'
-import Tile from './components/Tile'
-import TextBox from './components/Textbox'
-import ResetButton from './components/ResetButton'
+import React from 'react';
+import { AppProvider } from './context/AppContext';
+import Tile from './components/Tile';
+import TextBox from './components/Textbox';
+import ResetButton from './components/ResetButton';
 
-import './App.css'
+import './App.css';
 
 const App = () => {
   return (
@@ -15,45 +15,43 @@ const App = () => {
         </div>
         <div className='row'>
           <div className='tile'>
-            <Tile id="Tile11"/>
+            <Tile id='Tile11' />
           </div>
           <div className='tile'>
-            <Tile id="Tile12"/>
+            <Tile id='Tile12' />
           </div>
           <div className='tile'>
-            <Tile id="Tile13"/>
-          </div>
-        </div>
-        <div className='row'>
-          <div className='tile'>
-            <Tile id="Tile21"/>
-          </div>
-          <div className='tile'>
-            <Tile id="Tile22"/>
-          </div>
-          <div className='tile'>
-            <Tile id="Tile23"/>
+            <Tile id='Tile13' />
           </div>
         </div>
         <div className='row'>
           <div className='tile'>
-            <Tile id="Tile31"/>
+            <Tile id='Tile21' />
           </div>
           <div className='tile'>
-            <Tile id="Tile32"/>
+            <Tile id='Tile22' />
           </div>
           <div className='tile'>
-            <Tile id="Tile33"/>
+            <Tile id='Tile23' />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='tile'>
+            <Tile id='Tile31' />
+          </div>
+          <div className='tile'>
+            <Tile id='Tile32' />
+          </div>
+          <div className='tile'>
+            <Tile id='Tile33' />
           </div>
         </div>
         <div className='row-reset-button'>
           <ResetButton />
         </div>
-
       </div>
-
     </AppProvider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

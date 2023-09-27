@@ -1,0 +1,53 @@
+.box {
+  height: 300px;
+  width: 300px;
+}
+
+.box .board {
+  height: 300px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 300px;
+}
+
+.box .overlap-group {
+  height: 300px;
+  position: relative;
+}
+
+.box .line-hor {
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 94px;
+  width: 300px;
+}
+
+.box .img {
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 194px;
+  width: 300px;
+}
+
+.box .line-ver {
+  height: 300px;
+  left: 99px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.box .line-ver-2 {
+  height: 300px;
+  left: 199px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
